@@ -1,0 +1,21 @@
+int pulsador = 3;
+int contador = 0;
+
+void setup (){
+Serial.begin(9600);
+  pinMode(3, OUTPUT);
+  attachInterrupt(digitalPinToInterrupt(3), contar, CHANGE);
+}
+
+void loop(){
+
+  
+}
+
+void contar(){
+Serial.print("cambio de estado");
+  Serial.println(contador);
+  contador+=1;
+
+
+}
