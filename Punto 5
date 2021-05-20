@@ -1,0 +1,35 @@
+int ledRojo = 5;
+int ledAmarillo = 3;
+int ledVerde = 4;
+
+void setup(){
+Serial.begin(9600);
+  pinMode(ledRojo, OUTPUT);
+  pinMode(ledAmarillo, OUTPUT);
+  pinMode(ledVerde, OUTPUT);
+  attachInterrupt(digitalPinToInterrupt(2), leds , CHANGE);
+}
+
+void loop(){
+  digitalWrite(ledRojo, HIGH);
+    digitalWrite(ledAmarillo, LOW);
+    digitalWrite(ledVerde, LOW);
+  delay(3000);
+  
+  digitalWrite(ledRojo, LOW);
+    digitalWrite(ledAmarillo, HIGH);
+    digitalWrite(ledVerde, LOW);
+   delay(3000);
+  
+  digitalWrite(ledRojo, LOW);
+    digitalWrite(ledAmarillo, LOW);
+    digitalWrite(ledVerde, HIGH);
+   delay(3000);
+}
+
+void leds(){
+  digitalWrite(ledRojo, HIGH);
+    digitalWrite(ledAmarillo, HIGH);
+    digitalWrite(ledVerde, HIGH);
+  delay(3000);
+}
