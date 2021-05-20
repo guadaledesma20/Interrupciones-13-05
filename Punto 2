@@ -1,0 +1,29 @@
+int boton = 2;
+int led1 = 6;
+
+
+void setup()
+{
+  Serial.begin(9600);
+ pinMode(boton, OUTPUT); 
+  pinMode(led1, OUTPUT);
+  attachInterrupt(digitalPinToInterrupt(6), activar, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(2), activar, CHANGE);
+}
+
+void loop(){
+ 
+}
+                  
+
+void activar()
+{
+  if(digitalRead(2)== HIGH){
+  digitalWrite(led1, HIGH);
+ Serial.print("CAMBIO ESTADO 1");
+  }else{
+    (digitalRead(2) == LOW);
+    digitalWrite(led1, LOW);
+ Serial.println("CAMBIO ESTADO 2");
+  }
+}
