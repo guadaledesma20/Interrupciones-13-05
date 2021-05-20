@@ -1,0 +1,19 @@
+int interruptor = 3; 
+int contador=0;
+void setup()
+{
+  pinMode(3,OUTPUT);
+  attachInterrupt(digitalPinToInterrupt(3),fcontador,RISING);   
+ Serial.begin(9600);
+}
+
+void loop(){
+  Serial.print(" contador ="); 
+  Serial.println(contador);
+  delay(5000);
+}
+void  fcontador()
+{
+  
+  contador += 1;
+}
