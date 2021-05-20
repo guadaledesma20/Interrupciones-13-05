@@ -1,0 +1,24 @@
+int led1 = 6;
+int boton = 2;
+int tiempo = 5000;
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(led1, OUTPUT);
+attachInterrupt(digitalPinToInterrupt(2), activar, RISING);
+  
+}
+void loop (){
+    digitalWrite(led1,LOW);
+	delay(tiempo);
+    digitalWrite(led1,HIGH);
+    delay(tiempo);
+}
+
+void activar()
+{
+  tiempo = tiempo - 500;
+    Serial.println(tiempo);
+
+}
